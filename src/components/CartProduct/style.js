@@ -71,6 +71,8 @@ export const ItemCart = styled.li`
             height: 20px;
             width: 20px;
 
+            cursor: pointer;
+
             text-align: center;
 
             border-radius: 0.4rem;
