@@ -1,24 +1,9 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { contextDashboard } from "../../context";
 import { ContainerHeader } from "./style";
 
-function Header({ setFilteredProducts, products }) {
-  const [seek, setSeek] = useState("");
-
-  function search() {
-    if (seek.trim().length > 0) {
-      setFilteredProducts(
-        products.filter(
-          (product) =>
-            product.name.toLowerCase().includes(seek.toLowerCase()) ||
-            product.category.toLowerCase().includes(seek.toLowerCase())
-        )
-      );
-    }
-  }
-
-  function all() {
-    setFilteredProducts(products);
-  }
+const Header = () => {
+  const { seek, setSeek, search, all } = useContext(contextDashboard);
 
   return (
     <ContainerHeader>
@@ -50,6 +35,6 @@ function Header({ setFilteredProducts, products }) {
       </div>
     </ContainerHeader>
   );
-}
+};
 
 export default Header;
