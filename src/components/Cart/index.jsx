@@ -1,17 +1,12 @@
 import CartTotal from "../CartTotal";
 import { SectionCart } from "./style";
 import CartProduct from "../CartProduct";
+import { useContext } from "react";
+import { contextDashboard } from "../../context";
 
-function Cart({ currentSale, cartTotal, setCartTotal, setCurrentSale }) {
-  function removeItem(productDeleted) {
-    const product = currentSale.findIndex(
-      (product) => product.id === productDeleted.id
-    );
-
-    currentSale.splice(product, 1);
-
-    setCurrentSale([...currentSale]);
-  }
+const Cart = () => {
+  const { currentSale, setCurrentSale, cartTotal, setCartTotal } =
+    useContext(contextDashboard);
 
   return (
     <SectionCart currentSale={currentSale}>
@@ -35,7 +30,6 @@ function Cart({ currentSale, cartTotal, setCartTotal, setCurrentSale }) {
                 <CartProduct
                   key={index}
                   product={product}
-                  removeItem={removeItem}
                 />
               );
             })}
@@ -50,6 +44,6 @@ function Cart({ currentSale, cartTotal, setCartTotal, setCurrentSale }) {
       />
     </SectionCart>
   );
-}
+};
 
 export default Cart;
