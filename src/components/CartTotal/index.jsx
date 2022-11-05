@@ -1,9 +1,16 @@
+import { useContext } from "react";
 import { useEffect } from "react";
+import { contextDashboard } from "../../context";
 import { ContainerTotal } from "./style";
 
-function CartTotal({ currentSale, cartTotal, setCartTotal, setCurrentSale }) {
+const CartTotal = () => {
+  const { currentSale, setCurrentSale, cartTotal, setCartTotal } =
+    useContext(contextDashboard);
+
   useEffect(() => {
-    setCartTotal(currentSale.reduce((acc, cur) => acc + cur.price, 0));
+    setCartTotal(
+      currentSale.reduce((acc, cur) => acc + cur.price * cur.quantity, 0)
+    );
   }, [currentSale, setCartTotal]);
 
   return (
@@ -17,6 +24,6 @@ function CartTotal({ currentSale, cartTotal, setCartTotal, setCurrentSale }) {
       </button>
     </ContainerTotal>
   );
-}
+};
 
 export default CartTotal;

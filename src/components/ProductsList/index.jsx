@@ -1,17 +1,16 @@
-import Products from "../Product";
+import { useContext } from "react";
+import { contextDashboard } from "../../context";
+import Product from "../Product";
 import { ListCard } from "./style";
 
-function ProductList({ handleClick, filteredProducts, currentSale }) {
+const ProductList = () => {
+  const { filteredProducts } = useContext(contextDashboard);
+
   return (
     <ListCard>
       {filteredProducts.length > 0 ? (
         filteredProducts.map((product) => (
-          <Products
-            key={product.id}
-            product={product}
-            handleClick={handleClick}
-            currentSale={currentSale}
-          />
+          <Product key={product.id} product={product} />
         ))
       ) : (
         <div className="noProduct">
@@ -23,6 +22,6 @@ function ProductList({ handleClick, filteredProducts, currentSale }) {
       )}
     </ListCard>
   );
-}
+};
 
 export default ProductList;

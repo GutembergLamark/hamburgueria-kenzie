@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ItemCart = styled.li`
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 
     .containerImgInfo{
         display: flex;
@@ -60,5 +60,42 @@ export const ItemCart = styled.li`
         cursor: pointer;
     }
 
-    
+    .itemController__counter{
+        display: flex;
+        justify-content: space-around;
+        gap: 10px;
+
+        .counter--max, .counter--min{
+            background-color: var(--color-primary);
+
+            height: 20px;
+            width: 20px;
+
+            text-align: center;
+
+            border-radius: 0.4rem;
+
+            position: relative;
+
+            span{
+                color: white;
+
+                position: absolute;
+
+                bottom: 20%;
+                right: 30%;
+            }
+        }
+
+        .counter--min{
+            background-color: #f10;
+
+            span{
+                position: absolute;
+
+                bottom: 20%;
+                right: 35%;
+            }
+        }
+    }
 `
