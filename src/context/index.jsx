@@ -22,7 +22,7 @@ const Provider = ({ children }) => {
       currentSale.map((item) =>
         item.id === product.id
           ? { ...product, quantity: product.quantity + 1 }
-          : product
+          : item
       )
     );
   }
@@ -35,7 +35,7 @@ const Provider = ({ children }) => {
         currentSale.map((item) =>
           item.id === product.id
             ? { ...product, quantity: product.quantity - 1 }
-            : product
+            : item
         )
       );
     }

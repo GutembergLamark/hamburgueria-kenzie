@@ -24,6 +24,17 @@ export const Main = styled.main`
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  h2{
+    text-align: left;
+    
+    span{
+      opacity: 0.4
+    }
+  }
+
 }
 
 @media only screen and (min-width: 768px) {

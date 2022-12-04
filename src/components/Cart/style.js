@@ -20,7 +20,7 @@ export const SectionCart = styled.section`
 
     @media only screen and (min-width: 992px){
         &{
-            width: 30%;
+            width: 35%;
         }
     }
 

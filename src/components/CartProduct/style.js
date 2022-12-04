@@ -4,6 +4,7 @@ export const ItemCart = styled.li`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: .625rem;
 
     .containerImgInfo{
         display: flex;
@@ -32,7 +33,20 @@ export const ItemCart = styled.li`
     .containerInfo__name{
         font-size: .875rem;
         text-align: left;
+
         margin: .625rem 0;
+
+        width: 70px;
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    @media only screen and (min-width: 992px){
+        .containerInfo__name{
+            width: 100%;
+        }
     }
 
     .containerInfo__category{

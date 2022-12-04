@@ -23,7 +23,13 @@ export const Card = styled.li`
         }
         
         &:hover{
-            transform: scale(1.1)
+            .containerImage{
+                overflow: hidden;
+
+                .containerImage__img{
+                    transform: scale(1.1)
+                }
+            }
         }
 
     }
@@ -62,6 +68,8 @@ export const Card = styled.li`
         width: 80%;
         
         padding:0;
+
+        transition: all 0.5s ease-in-out;
     }
 
 `

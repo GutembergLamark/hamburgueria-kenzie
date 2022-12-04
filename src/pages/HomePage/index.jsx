@@ -9,13 +9,18 @@ import { contextDashboard } from "../../context";
 import { Main } from "./style";
 
 const HomePage = () => {
-  const { setFilteredProducts, products } = useContext(contextDashboard);
+  const { setFilteredProducts, products, seek } = useContext(contextDashboard);
 
   return (
     <>
       <Header setFilteredProducts={setFilteredProducts} products={products} />
       <Main className="contentMain">
         <section className="containerMain__vitrine">
+          {seek.length > 0 && (
+            <h2>
+              Resultado: <span>{seek}</span>
+            </h2>
+          )}
           <ProductList />
         </section>
 

@@ -21,12 +21,16 @@ const Header = () => {
             type="text"
             placeholder="Digitar Pesquisar"
             value={seek}
-            onChange={(ev) => setSeek(ev.target.value)}
+            onChange={(ev) => {
+              setSeek(ev.target.value);
+              search();
+
+              ev.target.value === "" && all();
+            }}
           />
           <button
             onClick={() => {
               search();
-              setSeek("");
             }}
           >
             Pesquisar
